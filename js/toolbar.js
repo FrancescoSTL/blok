@@ -5,7 +5,6 @@ browser.runtime.onMessage.addListener(function (runtimeMessage) {
 
     document.querySelector('#title-blocking').className = 'hide';
     document.querySelector('#title-disabled').className = 'title';
-    document.querySelector('#title-allowed-count').innerHTML = allowedEntitiesCount;
 
     for (let feedbackElement of document.querySelectorAll('.feedback')) {
       feedbackElement.className = 'feedback hide';
@@ -18,7 +17,6 @@ browser.runtime.onMessage.addListener(function (runtimeMessage) {
     }
   } else {
     blockedEntitiesCount = runtimeMessage.blocked_entities.length;
-    document.querySelector('#title-block-count').innerHTML = blockedEntitiesCount;
   }
 });
 
